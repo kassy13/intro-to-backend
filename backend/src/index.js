@@ -4,7 +4,7 @@ import app from './app.js';
 
 if (process.env.NODE_ENV !== 'production' && !process.env.MONGODB_URI) {
     dotenv.config({
-        path: './.env' // Path remains for local dev, but is skipped on Render/production
+        path: `${process.cwd()}/.env` // Guaranteed absolute path to the root .env file
     })
 }
 const startServer = async () => {
